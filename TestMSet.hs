@@ -30,14 +30,14 @@ writeMSet filename mset = do
     writeFile filename mset
 
 main = do {
-    m1 <- readMSet "C:\\Users\\given\\Desktop\\Appunti\\Advanced programming\\Assegnamento_2\\aux_files\\anagram.txt"; 
-    m2 <- readMSet "C:\\Users\\given\\Desktop\\Appunti\\Advanced programming\\Assegnamento_2\\aux_files\\anagram-s1.txt"; 
-    m3 <- readMSet "C:\\Users\\given\\Desktop\\Appunti\\Advanced programming\\Assegnamento_2\\aux_files\\anagram-s2.txt"; 
-    m4 <- readMSet "C:\\Users\\given\\Desktop\\Appunti\\Advanced programming\\Assegnamento_2\\aux_files\\margana2.txt"; 
+    m1 <- readMSet "aux_files\\anagram.txt"; 
+    m2 <- readMSet "aux_files\\anagram-s1.txt"; 
+    m3 <- readMSet "aux_files\\anagram-s2.txt"; 
+    m4 <- readMSet "aux_files\\margana2.txt"; 
     if not (m1 == m4) && (elems m1 == elems m4) then putStrLn "Multisets m1 and m4 are not equal, but they have the same elements";
     else putStrLn "The condition on m1 and m4 is not True";
-    writeMSet "C:\\Users\\given\\Desktop\\Appunti\\Advanced programming\\Assegnamento_2\\aux_files\\anag-out.txt" (mapToString m1);
+    writeMSet "aux_files\\anag-out.txt" (mapToString m1);
     if m1 == (Multiset.union m2 m3) then putStrLn "Multiset m1 is equal to the union of multisets m2 and m3";
     else putStrLn "The condition on m1 and the union of m1 and m3 is not True";
-    writeMSet "C:\\Users\\given\\Desktop\\Appunti\\Advanced programming\\Assegnamento_2\\aux_files\\gana-out.txt" (mapToString m4);
+    writeMSet "aux_files\\gana-out.txt" (mapToString m4);
 }
